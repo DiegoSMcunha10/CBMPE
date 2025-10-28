@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciar Usuários - Bombeiros PE</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/usuario.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Bombeiros PE</h2>
+    <ul>
+      <li><a href="ocorrencias.html">Ocorrências</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="usuarios.html" class="active">Usuários</a></li>
+      <li><a href="auditoria.html">Auditoria</a></li>
+      <li><a href="index.html" onclick="logout()">Sair</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="header">
+      <h1>Gerenciar Usuários</h1>
+      <button id="btnCadastrar">Cadastrar Usuário</button>
+    </div>
+
+    <table id="tabelaUsuarios">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Perfil</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ana Silva</td>
+          <td>ana.silva@email.com</td>
+          <td>Administrador</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Pedro Almeida</td>
+          <td>pedro.almeida@email.com</td>
+          <td>Chefe</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+         <tr>
+          <td>Ana Silva</td>
+          <td>ana.silva@email.com</td>
+          <td>Administrador</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+         <tr>
+          <td>Ana Silva</td>
+          <td>ana.silva@email.com</td>
+          <td>Administrador</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+         <tr>
+          <td>Ana Silva</td>
+          <td>ana.silva@email.com</td>
+          <td>Administrador</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+         <tr>
+          <td>Ana Silva</td>
+          <td>ana.silva@email.com</td>
+          <td>Administrador</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+         <tr>
+          <td>Ana Silva</td>
+          <td>ana.silva@email.com</td>
+          <td>Administrador</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+         <tr>
+          <td>Ana Silva</td>
+          <td>ana.silva@email.com</td>
+          <td>Administrador</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+         <tr>
+          <td>Ana Silva</td>
+          <td>ana.silva@email.com</td>
+          <td>Administrador</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+         <tr>
+          <td>Ana Silva</td>
+          <td>ana.silva@email.com</td>
+          <td>Administrador</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+         <tr>
+          <td>Ana Silva</td>
+          <td>ana.silva@email.com</td>
+          <td>Administrador</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+         <tr>
+          <td>Ana Silva</td>
+          <td>ana.silva@email.com</td>
+          <td>Administrador</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+         <tr>
+          <td>Ana Silva</td>
+          <td>ana.silva@email.com</td>
+          <td>Administrador</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+         <tr>
+          <td>Ana Silva</td>
+          <td>ana.silva@email.com</td>
+          <td>Administrador</td>
+          <td>
+            <button onclick="editarUsuario(this)">Editar</button> |
+            <button onclick="excluirUsuario(this)">Excluir</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal de Cadastro -->
+  <div class="modal" id="modalCadastro">
+    <div class="modal-content">
+      <h2>Cadastrar Usuário</h2>
+      <input type="text" id="nome" placeholder="Nome completo" required />
+      <input type="email" id="email" placeholder="E-mail" required />
+      <select id="perfil">
+        <option value="">Selecione um perfil</option>
+        <option>Administrador</option>
+        <option>Chefe</option>
+        <option>Operacional</option>
+        <option>Analista</option>
+      </select>
+      <button onclick="salvarUsuario()">Salvar</button>
+      <button class="close" onclick="fecharModal()">Cancelar</button>
+    </div>
+  </div>
+
+  <script src="usuario.js"></script>
+</body>
+</html>

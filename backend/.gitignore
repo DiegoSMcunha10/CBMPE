@@ -1,0 +1,13 @@
+# .gitignore
+
+# Dependências
+node_modules
+
+# Arquivos compilados
+dist
+
+# Arquivo de segredos
+.env
+
+# Logs
+npm-debug.log

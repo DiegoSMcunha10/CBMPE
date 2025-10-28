@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Ocorrência</title>
+    <link rel="stylesheet" href="css/registrarocorrencia.css">
+     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+      <div class="sidebar">
+        <h2>Bombeiros PE</h2>
+        <ul>
+            <li><a href="ocorrencias.html">Ocorrências</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="usuarios.html">Usuários</a></li>
+            <li><a href="auditoria.html" class="active">Auditoria</a></li>
+            <li><a href="index.html" onclick="logout()">Sair</a></li>
+        </ul>
+    </div>  
+      
+      <h1>Nova Ocorrência</h1>
+
+        <form id="occurrenceForm">
+            
+            <div class="form-group">
+                <label for="nomeCompleto">Nome Completo *</label>
+                <input type="text" id="nomeCompleto" placeholder="Digite o nome completo" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="telefone1">Telefone 1 *</label>
+                    <input type="tel" id="telefone1" placeholder="(XX) XXXX-XXXX" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone2">Telefone 2 *</label>
+                    <input type="tel" id="telefone2" placeholder="(XX) XXXX-XXXX" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="descricao">Descrição do Ocorrido *</label>
+                <textarea id="descricao" rows="6" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="tipoOcorrencia">Tipo de Ocorrência *</label>
+                <div class="select-wrapper">
+                    <select id="tipoOcorrencia" required>
+                        <option value="" disabled selected>Selecione o tipo:</option>
+                        <option value="vazamento">Vazamento</option>
+                        <option value="falta_energia">Falta de Energia</option>
+                        <option value="manutencao">Manutenção</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="equipeAssociada">Equipe Associada *</label>
+                <div class="select-wrapper">
+                    <select id="equipeAssociada" required>
+                        <option value="" disabled selected>Selecione a equipe:</option>
+                        <option value="equipe_alpha">Equipe Alpha</option>
+                        <option value="equipe_beta">Equipe Beta</option>
+                        <option value="equipe_gamma">Equipe Gamma</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Registrar Ocorrência</button>
+
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
