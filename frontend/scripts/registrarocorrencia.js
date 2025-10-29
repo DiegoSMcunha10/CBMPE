@@ -24,12 +24,34 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Se tudo estiver OK, exibe os dados no console
-        console.log('Formulário enviado com sucesso:');
-        console.log(formData);
+        const novaOcorrencia = {
+            NomeCompleto: formData.nome,
+            Telefone1: formData.telefone1,
+            Telefone2: formData.telefone2,
+            Obs: formData.descricao,
+            TipoOcorrencia: formData.tipo,
+            EquipeAssociada: formData.equipe
+        };
 
-        // Exibe uma mensagem de sucesso para o usuário
-        alert('Ocorrência registrada com sucesso!');
+        // Envio dos dados para o backend usando Fetch API
+        fetch('http://localhost:3000/ocorrencias/criar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(novaOcorrencia)
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Ocorrência criada com sucesso!');
+            } else {
+                alert('Erro ao criar ocorrência.');
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert('Erro ao criar ocorrência.');
+        });
 
         // Opcional: Limpa o formulário após o envio
         form.reset();

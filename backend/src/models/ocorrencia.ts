@@ -7,6 +7,8 @@ export interface Iocorrencias extends Document {
   Obs: string;
   TipoOcorrencia: string;
   EquipeAssociada: string;
+  Status: string;
+  data_hora: Date;
 }
 
 const ocorrenciaSchema = new Schema<Iocorrencias>({
@@ -16,6 +18,8 @@ const ocorrenciaSchema = new Schema<Iocorrencias>({
   Obs: { type: String, required: true },
   TipoOcorrencia: { type: String, required: true },
   EquipeAssociada: { type: String, required: true },
+  Status: { type: String, required: true },
+  data_hora: { type: Date, required: true },
 });
 
-export const ocorrencia = mongoose.model <Iocorrencias> ("Ocorrencias", ocorrenciaSchema)
+export const Ocorrencia = mongoose.model <Iocorrencias> ("Ocorrencias", ocorrenciaSchema)

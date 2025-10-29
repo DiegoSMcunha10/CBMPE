@@ -1,10 +1,10 @@
 import conexaoMongoDb from "./config/db.js";
-import { ocorrencia } from "./models/ocorrencia.js";
+import { Ocorrencia } from "./models/ocorrencia.js";
 
 async function startApp() {
     await conexaoMongoDb;
 
-    const novoUsuario = await ocorrencia.create({
+    const novoUsuario = await Ocorrencia.create({
         NomeCompleto: "José Mário da Silva",
         Telefone1: "81985492131",
         Telefone2: "12345678911",

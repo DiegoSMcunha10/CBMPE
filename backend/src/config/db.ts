@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
 import 'dotenv/config';
+import dotenv from "dotenv";
+
+dotenv.config();
+
 
 async function conexaoMongoDb() {
   try {
