@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Bombeiros PE</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="login-page">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="login-page">
     <div class="login-container">
-        <img src="/FOTO PROJETO PI.jpg" alt="Logo Bombeiros" class="logo" style="width: 100%; height: 320px;">
-        <input type="text" id="matricula" placeholder="Matrícula">
-        <input type="password" id="senha" placeholder="Senha">
-        <button onclick="login()">ENTRAR</button>
-        <a href="#" class="forgot">Esqueci minha senha</a>
+      <div class="logo-wrap">
+        <img src="/CBMPE/frontend/public/OIP.webp" alt="Logo Bombeiros" class="logo" />
+      </div>
+
+      <h1>Login CBMPE</h1>
+
+      <div id="login-error" class="login-error">
+        Matrícula ou senha incorretos
+      </div>
+
+      <div class="input-group">
+        <label for="matricula">Matrícula</label>
+        <input type="text" id="matricula" placeholder="Digite sua matrícula" />
+      </div>
+
+      <div class="input-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Digite sua senha" />
+      </div>
+
+      <button class="btn-login" onclick="login()">Entrar</button>
+      <a href="#" class="forgot">Esqueci minha senha</a>
     </div>
+
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>

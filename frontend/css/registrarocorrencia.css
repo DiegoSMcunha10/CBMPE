@@ -1,123 +1,139 @@
 /* Importa a fonte para ficar parecido com a imagem */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
 /* Configurações Globais */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Lato', 'Arial', sans-serif;
-    background-color: #f7f5f9; /* Cor de fundo levemente roxa/bege da imagem */
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 2rem;
+  font-family: "Lato", "Arial", sans-serif;
+  margin: 0;
+  background: #f7f5f9; /* Cor de fundo levemente roxa/bege da imagem */
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
 }
 
+/* Global variables */
+:root {
+  --bg: #f7f5f9;
+  --surface: #fff;
+  --muted: #9aa0b2;
+  --accent: #6a48d9;
+  --radius: 10px;
+  --shadow: 0 12px 30px rgba(11, 12, 30, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lato", "Arial", sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: #222;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* main container */
 .container {
-    width: 100%;
-    max-width: 600px;
+  width: 100%;
+  max-width: 900px;
+  margin: 28px auto;
+  padding: 22px;
+  background: var(--surface);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
 }
 
+/* form layout */
 h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #2c2c2c;
-    margin-bottom: 2rem;
+  font-size: 1.6rem;
+  margin-bottom: 18px;
 }
-
 form {
-    width: 100%;
+  display: block;
 }
-
-/* Grupos de Formulário (Label + Input) */
 .form-group {
-    margin-bottom: 1.5rem;
+  margin-bottom: 14px;
 }
-
 label {
-    display: block;
-    font-weight: 700;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #333;
 }
-
-/* Estilo dos Inputs, Textarea e Select */
 input[type="text"],
 input[type="tel"],
 textarea,
 select {
-    width: 100%;
-    padding: 15px;
-    font-size: 1rem;
-    border: 1px solid #e6e1f0;
-    border-radius: 8px;
-    background-color: #faf8ff; /* Cor de fundo roxa bem clara dos campos */
-    color: #333;
-    font-family: 'Lato', 'Arial', sans-serif;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #eef0f6;
+  background: #fbfbff;
+  color: #222;
+  font-size: 1rem;
 }
-
-/* Cor do texto do placeholder */
-::placeholder {
-    color: #a8a2b3;
-}
-
-/* Remove as setas padrão do textarea */
 textarea {
-    resize: vertical;
+  min-height: 120px;
+  resize: vertical;
 }
-
-/* Linha com dois campos (Telefones) */
 .form-row {
-    display: flex;
-    gap: 1.5rem;
+  display: flex;
+  gap: 12px;
 }
-
 .form-row .form-group {
-    flex: 1; /* Faz os dois campos dividirem o espaço igualmente */
+  flex: 1;
 }
 
-/* Estilização customizada do Select (Dropdown) */
+/* select wrapper arrow */
 .select-wrapper {
-    position: relative;
+  position: relative;
 }
-
-select {
-    appearance: none; /* Esconde a seta padrão do navegador */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-/* Adiciona a seta customizada (como na imagem) */
 .select-wrapper::after {
-    content: '↕'; /* Símbolo de seta para cima e para baixo */
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
-    pointer-events: none; /* Permite clicar no select "através" da seta */
+  content: "▾";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9aa0b2;
+  pointer-events: none;
 }
 
-/* Botão de Envio (Adicionado para o formulário funcionar) */
+/* submit button */
 .submit-btn {
-    width: 100%;
-    padding: 15px;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #fff;
-    background-color: #6a48d9; /* Um roxo forte, combinando com o tema */
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 6px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(106, 72, 217, 0.12);
+}
+.submit-btn:hover {
+  filter: brightness(0.98);
 }
 
-.submit-btn:hover {
-    background-color: #583cc2;
+/* sidebar present in page - keep compact */
+.sidebar {
+  position: relative;
+  margin-bottom: 18px;
+  padding: 10px 0;
+}
+@media (max-width: 880px) {
+  .form-row {
+    flex-direction: column;
+  }
 }
